@@ -8,7 +8,12 @@
 	<title>Home</title>
 </head>
 <body>
-	<h1>Hello Spring</h1>
+	<h1>Hello World!</h1>
+	<c:if test="${not empty param.name}">
+		<p>Name: ${param.name}</p>
+	</c:if>
+	<a href="report/list">2016年會員成長報表</a><br>
+	<a href="#">管理系統</a>
 	<a href="_01_product/productAdd.jsp">新增產品</a>
 </body>
 </html>
