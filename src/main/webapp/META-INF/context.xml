@@ -2,7 +2,7 @@
 <Context displayName="WimeBackstage" docBase="WimeBackstage" path="/WimeBackstage" reloadable="true">
   <!--                     MySQL                   -->
   <Resource name="jdbc/WIME" type="javax.sql.DataSource"
-      username="root" password="mysql"
+      username="root" password="4455"
       driverClassName="com.mysql.jdbc.Driver"
       url="jdbc:mysql:///wime"
       connectionProperties="useUnicode=yes;characterEncoding=utf8;"
