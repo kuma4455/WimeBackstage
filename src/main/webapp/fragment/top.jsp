@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<!-- 引入共同的頁首 -->
-<jsp:include page="/fragment/top.jsp" />
-	<h1>產品清單</h1>
+	<a href="../_01_product/productList.jsp">產品清單</a>
+	<a href="../_01_product/productAdd.jsp">新增產品</a>
 </body>
 </html>

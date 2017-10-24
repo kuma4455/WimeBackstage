@@ -7,6 +7,9 @@
 <title>productList</title>
 </head>
 <body>
+<!-- 引入共同的頁首 -->
+	<jsp:include page="/fragment/top.jsp" />
+
 	<form action="product/insertProduct" method="POST" enctype="multipart/form-data">
 		產品名稱<input type="text" name="productName"><br>
 		產品數量<input type="text" name="productNumber"><br>
