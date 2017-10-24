@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<!-- Web應用名稱 -->
+	<display-name>WimeBackstage</display-name>
+
+	<!-- web會去讀取道底下位置的物件，譬如這邊讓他去讀取applicationContext.xml -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		/WEB-INF/applicationContext-core.xml
+	</param-value>
+	</context-param>
+	<!-- 2.2加入Hibernate Filter -->
+	<filter>
+		<filter-name>HibernateFilter</filter-name>
+		<!--自訂Hibernate過濾器名稱註3 -->
+		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>sessionFactory</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>HibernateFilter</filter-name>
+		<!--需與上自訂Hibernate過濾器名稱(綠底)相同 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 1.初始化spring，用到context-param中的 contextConfigLocation -->
+	<!-- 2.要初始化就要讓ContextLoaderListener去完成上面applicationContext.xml的初始化 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 1.Context需要的servlet -->
+	<!-- 2.servlet的初始化和前端控制器DispatcherServlet的配置 -->
+	<!-- load on startup 是設定是啟動tomcat是否直接啟動servlet 越小優先順序越高(有可能有多個servlet) -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<!-- 1.1加入Spring-MVC分派者 -->
+		<servlet-name>mvcDispatcher</servlet-name>
+		<!--自訂Spring-MVC分派者名稱 -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 1.2指定Spring-MVC組態檔 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/applicationContext-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		    <multipart-config>
+        <max-file-size>5242880</max-file-size><!--5MB-->
+        <max-request-size>20971520</max-request-size><!--20MB-->
+        <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvcDispatcher</servlet-name>
+		<!--需與上自訂Spring-MVC分派者名稱(黃底)相同 -->
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
