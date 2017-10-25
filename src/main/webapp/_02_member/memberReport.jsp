@@ -13,9 +13,8 @@
 		<h1>
 			<div id="myDiv" style="width: 600px; height: 250px;"></div>
 			<script>
-			
 				var xhr = new XMLHttpRequest();
-				xhr.open("POST", "report/member?year=2017", true);
+				xhr.open("POST", "report/member?year=2016", true);
 // 				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				xhr.send();
 				xhr.onreadystatechange = function() {

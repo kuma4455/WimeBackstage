@@ -46,12 +46,12 @@ public class MemberController {
 //	}
 	
 	@RequestMapping("member")
-	public Map<String, Long> restGetAllMember(String year){
+	public Map<String, Long> restGetAllMember(int year){
 		Map<String, Long> memberIncrease = new HashMap<>();
 		String key = "";
 		for(int i = 1; i < 13; i++) {
 			String st = year + "-" + i +"-01";
-			String en = year + "-" + (i+1) +"-01";
+			String en = (i==12)?year+1+"-01-01":year + "-" + (i+1) +"-01";
 			switch(i) {
 				case 1:
 					key = "Jan";
