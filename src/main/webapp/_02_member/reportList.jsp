@@ -8,7 +8,7 @@
 </head>
 <body>
 報表清單<br>
-<a href="report/member">2016年會員成長報表</a><br>
+<a href="report/member?year=2017">2016年會員成長報表</a><br>
 <a href="report/product">2016年產品及業績報表</a>
 
 </body>

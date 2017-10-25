@@ -1,7 +1,9 @@
 package controller;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import model.dao.MemberDAO_Interface;
 import model.pojo.Member_Bean;
 
-@Controller
+@RestController
 @RequestMapping(value= {"_02_member/report", "report"})
 public class MemberController {
 	@Autowired
@@ -35,9 +37,60 @@ public class MemberController {
 //	@RequestMapping("member")
 //	public int restGetAllMember(){
 //		Date st = Date.valueOf("2017-09-01");
-//		Date en = Date.valueOf("2017-09-30");
+//		Date en = Date.valueOf("2017-10-01");
 //		return dao.count('m', st, en);
 //	}
+	@RequestMapping("member")
+	public Map<String, Long> restGetAllMember(String year){
+		Map<String, Long> memberIncrease = new HashMap<>();
+		String key = "";
+		for(int i = 1; i < 13; i++) {
+			String st = year + "-" + i +"-01";
+			String en = year + "-" + (i+1) +"-01";
+			switch(i) {
+				case 1:
+					key = "Jan";
+					break;
+				case 2:
+					key = "Feb";
+					break;
+				case 3:
+					key = "Mar";
+					break;
+				case 4:
+					key = "Apr";
+					break;
+				case 5:
+					key = "May";
+					break;
+				case 6:
+					key = "Jun";
+					break;
+				case 7:
+					key = "Jul";
+					break;
+				case 8:
+					key = "Aug";
+					break;
+				case 9:
+					key = "Sep";
+					break;
+				case 10:
+					key = "Oct";
+					break;
+				case 11:
+					key = "Nov";
+					break;
+				case 12:
+					key = "Dec";
+					break;
+					
+			}
+			memberIncrease.put(key+"_m", dao.count('m', st, en));
+			memberIncrease.put(key+"_f", dao.count('f', st, en));
+		}
+		return memberIncrease;
+	}
 	
 	
 //	@RequestMapping("member")
@@ -47,16 +100,16 @@ public class MemberController {
 	
 	
 //==================@Controller===================
-	
-	@RequestMapping("member")
-	public String member_Servlet(Model model){
-		
-		return "_02_member/memberReport";
-	}
-	
-	@RequestMapping("product")
-	public String product_Servlet(Model model){
-		return "_02_member/productReport";
-	}
+//	
+//	@RequestMapping("member")
+//	public String member_Servlet(Model model){
+//		
+//		return "_02_member/memberReport";
+//	}
+//	
+//	@RequestMapping("product")
+//	public String product_Servlet(Model model){
+//		return "_02_member/productReport";
+//	}
 	
 }
