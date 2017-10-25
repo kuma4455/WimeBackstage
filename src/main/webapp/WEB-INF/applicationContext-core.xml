@@ -45,6 +45,11 @@
 		<constructor-arg ref="sessionFactory" />
 		<!--透過建構子將SessionFactory注入. 需與步驟4.3SessionFactory名稱(綠底)相同 -->
 	</bean>
+	<bean id="memberDAO" class="model.dao.MemberDAO">
+		<!--指向步驟6.1所建立的DAO實作類別 -->
+		<constructor-arg ref="sessionFactory" />
+		<!--透過建構子將SessionFactory注入. 需與步驟4.3SessionFactory名稱(綠底)相同 -->
+	</bean>
 	<!-- 4.4宣告Spring交易管理者 -->
 	<bean id="txManager"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">

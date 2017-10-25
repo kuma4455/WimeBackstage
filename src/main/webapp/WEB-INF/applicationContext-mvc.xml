@@ -23,22 +23,30 @@
 		<property name="contentType" value="text/html;charset=UTF-8" />
 	</bean>
 
-	<mvc:annotation-driven>
+	<!-- <mvc:annotation-driven> -->
 
+	<!-- <mvc:message-converters> -->
+	<!-- <bean -->
+	<!-- class="org.springframework.http.converter.StringHttpMessageConverter"> -->
+	<!-- <constructor-arg value="UTF-8" /> -->
+	<!-- </bean> -->
+	<!-- <bean -->
+	<!-- class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> -->
+	<!-- <property name="supportedMediaTypes"> -->
+	<!-- <list> -->
+	<!-- <value>text/html;charset=UTF-8</value> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<!-- </mvc:message-converters> -->
+	<!-- </mvc:annotation-driven> -->
+
+	<mvc:annotation-driven>
 		<mvc:message-converters>
-				<bean
-					class="org.springframework.http.converter.StringHttpMessageConverter">
-					<constructor-arg value="UTF-8" />
-				</bean>
-				<bean
-					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-					<property name="supportedMediaTypes">
-						<list>
-							<value>text/html;charset=UTF-8</value>
-						</list>
-					</property>
-				</bean>
-			</mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+		</mvc:message-converters>
 	</mvc:annotation-driven>
+
 
 </beans>

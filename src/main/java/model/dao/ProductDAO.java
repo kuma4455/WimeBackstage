@@ -1,7 +1,5 @@
 package model.dao;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -12,7 +10,7 @@ import model.pojo.ProductBean;
 
 public class ProductDAO implements IProductDAO {
 	private SessionFactory sessionFactory;
-
+	
 	public ProductDAO(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
@@ -24,7 +22,14 @@ public class ProductDAO implements IProductDAO {
 		session.flush();
 		return id;
 	}
-
+	
+	@Transactional
+	@Override
+	public List<ProductBean> selectAllProducts(){
+		Session session = sessionFactory.getCurrentSession();
+		List<ProductBean> productList = session.createQuery("FROM ProductBean").list();
+		return productList;
+	}
 	@Override
 	public int deleteProductByKey(Integer id) {
 
@@ -45,11 +50,6 @@ public class ProductDAO implements IProductDAO {
 		return pb;
 	}
 
+	
 
-	@Override
-	public List<ProductBean> selectAllProducts() {
-
-		List<ProductBean> productList = new ArrayList<>();
-		return productList;
-	}
 }

@@ -11,9 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 
 @Entity
 @Table(name = "Product")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class ProductBean implements Serializable{
 
 	private static final long serialVersionUID = 2087540557559134745L;

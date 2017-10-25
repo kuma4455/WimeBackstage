@@ -6,13 +6,13 @@ import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Clob;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialClob;
 import javax.sql.rowset.serial.SerialException;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +25,13 @@ import model.dao.IProductDAO;
 import model.pojo.ProductBean;
 
 @Controller
-@RequestMapping({"product","_01_product/product"})
-public class ProductController {
+@RequestMapping({"productAdd","_01_product/product"})
+public class ProductAddController {
 	@Autowired
 	private IProductDAO productDAO;
-		//_01_product/product.do/insertProduct]
+
 	@RequestMapping(value = "insertProduct", method = RequestMethod.POST,
 			produces="text/plain;charset=UTF-8")
-	
 	public String insertProduct(Model model, Integer productNumber,String productName,
 			Integer stockNumber, String productDesc, double price, String imageName,
 			String software, String softDesc, @RequestParam("productImage") final MultipartFile multiPart) throws SerialException, SQLException, IOException, ServletException {
@@ -51,4 +50,6 @@ public class ProductController {
 		model.addAttribute("product",pb);
 		return "_01_product/result";
 	}
+	
+	
 }
