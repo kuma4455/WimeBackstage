@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${product.productName}
+<!-- 引入共同的頁首 -->
+<jsp:include page="/fragment/top.jsp" />
+	產品${product.productName} 新增成功
 </body>
 </html>

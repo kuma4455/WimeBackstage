@@ -1,8 +1,11 @@
 package model.pojo;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.sql.Clob;
+import java.sql.SQLException;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -115,8 +119,16 @@ public class ProductBean implements Serializable{
 		this.software = software;
 	}
 	@Column(name="PD_SoftDesc")
-	public Clob getSoftDesc() {
-		return softDesc;
+	public Clob getSoftDesc(){
+	 return softDesc;
+	}
+	
+	@Transient
+	public String getSoftDescS() throws IOException, SQLException {
+		Reader reader = softDesc.getCharacterStream();
+		char[] tmp = new char[(int) softDesc.length()];
+		reader.read(tmp);
+		return String.valueOf(tmp);
 	}
 
 	public void setSoftDesc(Clob softDesc) {
@@ -130,6 +142,14 @@ public class ProductBean implements Serializable{
 	public void setProductImage(Blob productImage) {
 		this.productImage = productImage;
 			
+	}
+
+	@Override
+	public String toString() {
+		return "ProductBean [id=" + id + ", productNumber=" + productNumber + ", productName=" + productName
+				+ ", stockNumber=" + stockNumber + ", productDesc=" + productDesc + ", price=" + price + ", imageName="
+				+ imageName + ", software=" + software + ", softDesc=" + softDesc + ", productImage=" + productImage
+				+ "]";
 	}
 	
 }
