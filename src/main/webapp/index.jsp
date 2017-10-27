@@ -13,6 +13,7 @@
 		<p>Name: ${param.name}</p>
 	</c:if>
 	<a href="_02_member/reportList.jsp">2016年會員成長報表</a><br>
-	<a href="_01_product/productList.jsp">管理系統</a>
+	<a href="productList/selectAllProducts">管理系統</a>
+
 </body>
 </html>
