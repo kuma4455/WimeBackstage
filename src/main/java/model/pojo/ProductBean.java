@@ -38,6 +38,19 @@ public class ProductBean implements Serializable{
 	
 	public ProductBean() {}
 
+//	public ProductBean(Integer id, Integer productNumber, String productName, Integer stockNumber, String productDesc,
+//			double price, String imageName, String software) {
+//		super();
+//		this.id = id;
+//		this.productNumber = productNumber;
+//		this.productName = productName;
+//		this.stockNumber = stockNumber;
+//		this.productDesc = productDesc;
+//		this.price = price;
+//		this.imageName = imageName;
+//		this.software = software;
+//	}
+
 	public ProductBean(Integer productNumber, String productName, Integer stockNumber, String productDesc, double price,
 			String imageName, String software, Clob softDesc, Blob productImage) {
 		super();

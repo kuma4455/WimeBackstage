@@ -25,7 +25,7 @@ import model.dao.IProductDAO;
 import model.pojo.ProductBean;
 
 @Controller
-@RequestMapping({"productAdd","_01_product/product"})
+@RequestMapping({"productAdd","_01_product/productAdd"})
 public class ProductAddController {
 	@Autowired
 	private IProductDAO productDAO;
@@ -48,7 +48,9 @@ public class ProductAddController {
 				productDesc, price, imageName, software, ccc,b);
 		productDAO.insertProduct(pb);
 		model.addAttribute("product",pb);
-		return "_01_product/result";
+		List<ProductBean> productList = productDAO.selectAllProducts();
+		model.addAttribute("products_DPP" , productList);
+		return "_01_product/productList";
 	}
 	
 	

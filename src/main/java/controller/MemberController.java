@@ -45,6 +45,7 @@ public class MemberController {
 //		return dao.count('m', st, en);
 //	}
 	
+	
 	@RequestMapping("member")
 	public Map<String, Long> restGetAllMember(int year){
 		Map<String, Long> memberIncrease = new HashMap<>();
