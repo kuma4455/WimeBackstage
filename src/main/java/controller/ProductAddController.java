@@ -13,6 +13,7 @@ import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialClob;
 import javax.sql.rowset.serial.SerialException;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +25,12 @@ import org.springframework.web.multipart.MultipartFile;
 import model.dao.IProductDAO;
 import model.pojo.ProductBean;
 
+
 @Controller
 @RequestMapping({"productAdd","_01_product/productAdd"})
 public class ProductAddController {
+	private final static Logger logger = Logger.getLogger(ProductListController.class);
+	
 	@Autowired
 	private IProductDAO productDAO;
 
@@ -50,6 +54,9 @@ public class ProductAddController {
 		model.addAttribute("product",pb);
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
+		
+		logger.fatal("新增一樣商品");
+		
 		return "_01_product/productList";
 	}
 	

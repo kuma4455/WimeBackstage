@@ -68,17 +68,18 @@
 			<param-value>/WEB-INF/applicationContext-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
-		    <multipart-config>
-        <max-file-size>5242880</max-file-size><!--5MB-->
-        <max-request-size>20971520</max-request-size><!--20MB-->
-        <file-size-threshold>0</file-size-threshold>
-    </multipart-config>
+		<multipart-config>
+			<max-file-size>5242880</max-file-size><!--5MB -->
+			<max-request-size>20971520</max-request-size><!--20MB -->
+			<file-size-threshold>0</file-size-threshold>
+		</multipart-config>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mvcDispatcher</servlet-name>
 		<!--需與上自訂Spring-MVC分派者名稱(黃底)相同 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
+	
 
 </web-app>

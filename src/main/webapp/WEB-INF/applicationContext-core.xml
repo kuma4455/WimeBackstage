@@ -11,8 +11,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!--aop-component-scan-->
-	<context:component-scan base-package="controller"></context:component-scan>
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+<!-- 	<context:component-scan base-package="controller"></context:component-scan> -->
+<!-- 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
 
 	<!-- 4.2宣告DataSource -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">

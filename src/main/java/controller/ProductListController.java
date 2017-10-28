@@ -2,12 +2,12 @@ package controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import model.dao.IProductDAO;
 import model.pojo.ProductBean;
@@ -15,6 +15,8 @@ import model.pojo.ProductBean;
 @Controller
 @RequestMapping({"productList","_01_product/productList"})
 public class ProductListController {
+	private final static Logger logger = Logger.getLogger(ProductListController.class);
+	
 	@Autowired
 	private IProductDAO productDAO;
 	
@@ -22,6 +24,9 @@ public class ProductListController {
 	public String selectAllProducts(Model model) {
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
+		
+//		logger.fatal("顯示產品列表");
+		
 		return "_01_product/productList";
 	}
 	
@@ -30,6 +35,8 @@ public class ProductListController {
 		int result = productDAO.deleteProductByKey(id);
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
+		
+		logger.fatal("刪除一樣商品");
 		
 		return "_01_product/productList";
 	}
