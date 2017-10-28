@@ -1,0 +1,11 @@
+.navbar {
+    border-radius: 0px;
+}
+
+img{
+	height: 100px;
+}
+.nav-container{
+	display: flex;
+	justify-content: flex-start;
+}

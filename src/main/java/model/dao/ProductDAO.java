@@ -27,13 +27,27 @@ public class ProductDAO implements IProductDAO {
 	@Override
 	public List<ProductBean> selectAllProducts(){
 		Session session = sessionFactory.getCurrentSession();
+					//select cat.name from DomesticCat cat
+//		String hql = "SELECT p.id, p.productName, p.productNumber, p.price, "
+//				+ " p.stockNumber FROM ProductBean p";
+		
 		List<ProductBean> productList = session.createQuery("FROM ProductBean").list();
+		for(Object obj : productList) {
+			System.out.println(obj.toString());
+		}
+		
 		return productList;
 	}
+	@Transactional
 	@Override
 	public int deleteProductByKey(Integer id) {
-
-		return 0;
+		Session session = sessionFactory.getCurrentSession();
+		int result = 0;
+		ProductBean pb = new ProductBean();
+		pb.setId(id);
+		session.delete(pb);
+		session.flush();
+		return ++result;
 	}
 
 	@Override
