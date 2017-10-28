@@ -41,6 +41,8 @@ public class MemberDAO implements MemberDAO_Interface {
 	// System.out.println(query.getSingleResult().getClass().getName());
 	// return query.getSingleResult();
 	// }
+
+	// 計算2016年會員成長圖
 	@Transactional
 	public Long count(char gender, String startTime, String endTime) {
 		Session session = sessionFactory.getCurrentSession();
@@ -51,6 +53,28 @@ public class MemberDAO implements MemberDAO_Interface {
 		query.setParameter("endTime", endTime);
 		return query.getSingleResult();
 	}
+
+	// 2016年所有產品銷售總量表
+	@Transactional
+	public Integer saleamount(int PDid) {
+		Session session = sessionFactory.getCurrentSession();
+		String sql = "SELECT amount FROM OrderDetail_Bean WHERE fk_product_id = :PDid";
+		TypedQuery<Integer> query = session.createQuery(sql);
+		query.setParameter("PDid", PDid);
+		return query.getSingleResult();
+	}
+
+	// 2016年營收曲線圖
+	@Transactional
+	public Integer income(String startTime, String endTime) {
+		Session session = sessionFactory.getCurrentSession();
+		String sql = "SELECT total FROM OrderList_Bean WHERE orderDate BETWEEN :startTime AND :endTime";
+		TypedQuery<Integer> query = session.createQuery(sql);
+		query.setParameter("startTime", Date.valueOf(startTime));
+		query.setParameter("endTime", Date.valueOf(endTime));
+		return query.getSingleResult();
+	}
+
 
 
 }
