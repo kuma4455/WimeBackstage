@@ -50,9 +50,10 @@
 					src='${pageContext.servletContext.contextPath}/_00_init/getImage?id=${productBean.id}&type=product'>
 			</div>
 			<div class="col-md-1">
-			<form action="deleteProducts" method="POST" enctype="multipart/form-data">
+			<form id="myCoolForm" action="${pageContext.servletContext.contextPath}/productList/deleteProducts" 
+				method="POST" enctype="multipart/form-data" onsubmit="return confirm('你確定要刪除嗎?');">
 				<Input type='hidden' name='id' value='${productBean.id}' />
-				<input type="submit" value="刪除" class="btnyellow">
+				<input type="submit" value="刪除" class="btnyellow" >
 			</form>
 			</div>
 			<br>
@@ -64,6 +65,9 @@
 	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />"></script>
-	
+	<!-- 刪除 confirm-->
+	<script type="text/javascript">
+
+</script>
 </body>
 </html>
