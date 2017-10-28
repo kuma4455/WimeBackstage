@@ -48,12 +48,11 @@
 						href="${pageContext.servletContext.contextPath}/_01_product/productAdd.jsp">新增產品</a></li>
 				</ul>
 
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid --> </nav>
-	</div>
-	<!-- /.nav-container-->
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid --> 
+		</nav>
+	</div><!-- /.nav-container-->
+	
 	<!-- jQuery library -->
 	<script
 		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>
