@@ -2,9 +2,6 @@ package model.pojo;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 //複合主鍵
 //1.把要複合的主鍵變成本class的屬性
 //2.getter & setter
@@ -12,7 +9,7 @@ import javax.persistence.Table;
 //4.@Override hashCode()，equals()方法
 
 public class complex_orderDetail implements Serializable{
-	private Order_Bean order_bean;
+	private OrderList_Bean orderList_bean;
 	private Product_Bean product_bean;
 	
 	public complex_orderDetail() {
@@ -22,15 +19,15 @@ public class complex_orderDetail implements Serializable{
 	
 	
 	
-	public Order_Bean getOrder_bean() {
-		return order_bean;
+	public OrderList_Bean getOrderList_bean() {
+		return orderList_bean;
 	}
 
 
 
 
-	public void setOrder_bean(Order_Bean order_bean) {
-		this.order_bean = order_bean;
+	public void setOrderList_bean(OrderList_Bean orderList_bean) {
+		this.orderList_bean = orderList_bean;
 	}
 
 
@@ -54,7 +51,7 @@ public class complex_orderDetail implements Serializable{
 	public int hashCode() {
 		final int PRIME = 31;  
         int result = 1;  
-        result = PRIME * result + (order_bean == null ? 0 : order_bean.hashCode());  
+        result = PRIME * result + (orderList_bean == null ? 0 : orderList_bean.hashCode());  
         result = PRIME * result + (product_bean == null ? 0 : product_bean.hashCode());   
         return result; 
 	}
@@ -64,7 +61,7 @@ public class complex_orderDetail implements Serializable{
         if(obj == null) return false;  
         if(!(obj instanceof complex_orderDetail)) return false;  
         complex_orderDetail objKey = (complex_orderDetail)obj;  
-        if(order_bean.equals(objKey.order_bean) &&  
+        if(orderList_bean.equals(objKey.orderList_bean) &&  
         		product_bean.equals(objKey.product_bean)) {  
             return true;  
         }  
