@@ -8,8 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 引入共同的頁首 -->
+<div style="display: flex; flex-direction: column;">
+	<jsp:include page="/fragment/top.jsp" />
+	
 	<h1>2016年WIME業績成長圖</h1>
 	<div id="myDiv" style="width: 80%; height: 400px;"></div>
+	</div>
 	<script>
 	Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv", function(err, rows){
 

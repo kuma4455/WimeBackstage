@@ -62,9 +62,9 @@
 	</c:forEach>
 </div>
 	<!-- jQuery library -->
-	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>
+	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />" type="text/javascript"></script>
 	<!-- Latest compiled JavaScript -->
-	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />"></script>
+	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />" type="text/javascript"></script>
 	
 </body>
 </html>

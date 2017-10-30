@@ -25,6 +25,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 引入共同的頁首 -->
+	<div style="display: flex; flex-direction: column;">
+	<jsp:include page="/fragment/top.jsp" />
+	
 	<div class="centerbox">
 		<ul class="nav nav-tabs">
 			<li role="presentation"><a href="reportList.jsp">Home</a></li>
@@ -47,6 +51,7 @@
 
 		<h1 id="title4">2016年總營收圓餅圖</h1>
 		<div id="memberDiv4" style="width: 100%; height: 400px;"></div>
+	</div>
 	</div>
 	<!-- jQuery library -->
 	<script

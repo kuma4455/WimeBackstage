@@ -20,11 +20,14 @@
 <body>
 	<!--nav-container-->
 	<div class="nav-container">
-		<img src="<c:url value="/resources/images/catlogo2.png"/>"> <font
-			class="title-backstage">後台管理系統</font>
+		<img src="<c:url value="/resources/images/catlogo2.png"/>"> 
+		
+		<!--title-nav-container-->
+		<div class="title-nav-container">
+		<font class="title-backstage">後台管理系統</font>
+			
 		<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -38,44 +41,50 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+					<!-- 首頁 -->
 					<li class="active"><a
 						href="${pageContext.servletContext.contextPath}/index.jsp">首頁
 							<span class="sr-only">(current)</span>
 					</a></li>
+					<!-- 產品清單 -->
 					<li><a
 						href="${pageContext.servletContext.contextPath}/productList/selectAllProducts">產品清單</a></li>
+					<!-- 新增產品 -->
 					<li><a
 						href="${pageContext.servletContext.contextPath}/_01_product/productAdd.jsp">新增產品</a></li>
-					
+					<!-- 年度報表 -->	
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">年度報表<span class="caret"></span></a>
+				         	<ul class="dropdown-menu" >
+				            <li><a href="${pageContext.servletContext.contextPath}/_02_member/memberReport.jsp">2016年年度報表</a></li>
+				            <li><a href="${pageContext.servletContext.contextPath}/_02_member/memberReport.jsp">2015年年度報表</a></li>
+				          </ul>
+				        </li>
 				</ul>
 				<ul class="navbar-right" style=" list-style: none;">
-
 					<li>
 						<div class="flipkart-navbar-search smallsearch col-sm-12 col-xs-12">
 							<div class="row">
-								<input class="flipkart-navbar-input col-xs-10 form-control" type=""
+								<input class="flipkart-navbar-input col-xs-12 form-control" type=""
 									placeholder="Search" name="">
-								<button class="flipkart-navbar-button col-xs-2">
+								<button class="flipkart-navbar-button col-xs-3">
 									<i class="fa fa-search fa-2x" aria-hidden="true"></i>
 								</button>
 							</div>
 						</div>
 					</li>
-				
-				</ul>
-
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid --> </nav>
-	</div>
-	<!-- /.nav-container-->
+				</ul><!-- /.navbar-right -->
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid --> 
+		</nav>
+		</div><!-- /.title-nav-container-->
+	</div><!-- /.nav-container-->
 
 	<!-- jQuery library -->
-	<script
-		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>
+<!-- 	<script -->
+<%-- 		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />" type="text/javascript"></script> --%>
 	<!-- Latest compiled JavaScript -->
-	<script
-		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />"></script>
+<!-- 	<script -->
+<%-- 		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />" type="text/javascript"></script> --%>
 </body>
 </html>
