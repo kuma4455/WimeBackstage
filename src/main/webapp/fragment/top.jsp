@@ -20,8 +20,8 @@
 <body>
 	<!--nav-container-->
 	<div class="nav-container">
-		<img src="<c:url value="/resources/images/catlogo.png"/>">
-		Wime後台管理系統
+		<img src="<c:url value="/resources/images/catlogo2.png"/>"> <font
+			class="title-backstage">後台管理系統</font>
 		<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -33,7 +33,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-			<a class="navbar-brand" href="#"></a>
+				<a class="navbar-brand" href="#"></a>
 			</div>
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
@@ -46,13 +46,31 @@
 						href="${pageContext.servletContext.contextPath}/productList/selectAllProducts">產品清單</a></li>
 					<li><a
 						href="${pageContext.servletContext.contextPath}/_01_product/productAdd.jsp">新增產品</a></li>
+					
+				</ul>
+				<ul class="navbar-right" style=" list-style: none;">
+
+					<li>
+						<div class="flipkart-navbar-search smallsearch col-sm-12 col-xs-12">
+							<div class="row">
+								<input class="flipkart-navbar-input col-xs-10 form-control" type=""
+									placeholder="Search" name="">
+								<button class="flipkart-navbar-button col-xs-2">
+									<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+					</li>
+				
 				</ul>
 
-			</div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid --> 
-		</nav>
-	</div><!-- /.nav-container-->
-	
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid --> </nav>
+	</div>
+	<!-- /.nav-container-->
+
 	<!-- jQuery library -->
 	<script
 		src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>

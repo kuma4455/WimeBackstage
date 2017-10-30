@@ -1,0 +1,65 @@
+*{
+/* 	border: 1px solid red;  */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+/*=========ariticle-left=========*/
+.article{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.block-all{
+    width: 35%;
+    height: 80%;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.block-all p{
+    padding-right: 3%;
+    width:150px;
+    font-family:'微軟正黑體',Roboto,sans-serif;
+    font-size: 25px;
+    margin: 0 0 0px;
+}
+.block-all div{
+    padding-bottom: 2%;
+
+}
+.block-all input{
+    width: 60%;
+
+}
+.product-name,
+.product-number,
+.product-price,
+.product-desc,
+.stock-number,
+.image-name,
+.software,
+.soft-desc,
+.product-image
+{
+    display: flex;
+    justify-content: flex-start;
+}
+.product-image input{
+}
+.product-submit{
+	display: flex;
+	justify-content: center;
+}
+.product-submit input{
+	width: 120px;
+	height: 40px;
+}
+

@@ -23,15 +23,15 @@
 
 	<!-- 引入共同的頁首 -->
 	<jsp:include page="/fragment/top.jsp" />
-	<h1>產品清單</h1>
-	<div class="container-fluid">
+<!-- 	<h1>產品清單</h1> -->
+	<div class="container-fluid top-add">
 	<c:forEach varStatus="stVar" var="productBean" items="${products_DPP}">
 		<div class="row col-md-10 col-md-offset-1 product-title">
 			<div class="col-md-1">代號</div>
 			<div class="col-md-2">產品</div>
 			<div class="col-md-1">數量</div>
 			<div class="col-md-2">價格</div>
-			<div class="col-md-2">庫存數量</div>
+			<div class="col-md-2">庫存</div>
 			<div class="col-md-3">圖片預覽</div>
 			<div class="col-md-1"></div>
 			<br>
@@ -53,7 +53,7 @@
 			<form id="myCoolForm" action="${pageContext.servletContext.contextPath}/productList/deleteProducts" 
 				method="POST" enctype="multipart/form-data" onsubmit="return confirm('你確定要刪除嗎?');">
 				<Input type='hidden' name='id' value='${productBean.id}' />
-				<input type="submit" value="刪除" class="btnyellow" >
+				<input type="submit" value="刪除" class="" >
 			</form>
 			</div>
 			<br>
@@ -65,9 +65,6 @@
 	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />"></script>
-	<!-- 刪除 confirm-->
-	<script type="text/javascript">
-
-</script>
+	
 </body>
 </html>

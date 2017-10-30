@@ -25,7 +25,7 @@ public class ProductListController {
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
 		
-//		logger.fatal("顯示產品列表");
+		logger.info("顯示產品列表");
 		
 		return "_01_product/productList";
 	}
@@ -36,7 +36,7 @@ public class ProductListController {
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
 		
-		logger.fatal("刪除一樣商品");
+		logger.info("刪除一樣商品");
 		
 		return "_01_product/productList";
 	}

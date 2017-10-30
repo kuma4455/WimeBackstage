@@ -55,7 +55,7 @@ public class ProductAddController {
 		List<ProductBean> productList = productDAO.selectAllProducts();
 		model.addAttribute("products_DPP" , productList);
 		
-		logger.fatal("新增一樣商品");
+		logger.info("新增一樣商品");
 		
 		return "_01_product/productList";
 	}
