@@ -25,33 +25,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 引入共同的頁首 -->
+	<!-- 引入共同的頁首 -->
 	<div style="display: flex; flex-direction: column;">
-	<jsp:include page="/fragment/top.jsp" />
-	
-	<div class="centerbox">
-		<ul class="nav nav-tabs">
-			<li role="presentation"><a href="reportList.jsp">Home</a></li>
-			<li role="presentation"><a id="show1" href="#">2016年WIME男女會員成長圖</a></li>
-			<li role="presentation"><a id="show2" href="#">2016年銷售數量圖</a></li>
-			<li role="presentation"><a id="show3" href="#">2016年營收曲線圖</a></li>
-			<li role="presentation"><a id="show4" href="#">2016年總營收圓餅圖</a></li>
+		<jsp:include page="/fragment/top.jsp" />
 
-		</ul>
+		<div class="centerbox">
+			<ul class="nav nav-tabs">
+<!-- 				<li role="presentation"><a href="reportList.jsp">Home</a></li> -->
+				<li role="presentation"><a id="show1" href="#">2016年WIME男女會員成長圖</a></li>
+				<li role="presentation"><a id="show2" href="#">2016年銷售數量圖</a></li>
+				<li role="presentation"><a id="show3" href="#">2016年營收曲線圖</a></li>
+				<li role="presentation"><a id="show4" href="#">2016年總營收圓餅圖</a></li>
 
-		<h1 id="title1">2016年WIME男女會員成長圖</h1>
-		<div id="memberDiv" style="width: 100%; height: 400px;"></div>
+			</ul>
 
-		<h1 id="title2">2016年銷售數量圖</h1>
-		<div id="memberDiv2" style="width: 100%; height: 400px;"></div>
+			<h1 id="title1" class="mtitle">2016年WIME男女會員成長圖</h1>
+			<div id="memberDiv" style="width: 100%; height: 400px;"></div>
 
-		<h1 id="title3">2016年營收曲線圖</h1>
-		<div id="memberDiv3" style="width: 100%; height: 400px;"></div>
+			<h1 id="title2" class="mtitle">2016年銷售數量圖</h1>
+			<div id="memberDiv2" style="width: 100%; height: 400px;"></div>
+
+			<h1 id="title3" class="mtitle">2016年營收曲線圖</h1>
+			<div id="memberDiv3" style="width: 100%; height: 400px;"></div>
 
 
-		<h1 id="title4">2016年總營收圓餅圖</h1>
-		<div id="memberDiv4" style="width: 100%; height: 400px;"></div>
-	</div>
+			<h1 id="title4" class="mtitle">2016年總營收圓餅圖</h1>
+			<div id="memberDiv4" style="width: 100%; height: 400px;"></div>
+		</div>
 	</div>
 	<!-- jQuery library -->
 	<script
