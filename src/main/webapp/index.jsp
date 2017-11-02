@@ -4,7 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="<c:url value="/resources/bootstrap-3.3.7-dist/css/bootstrap.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/font-awesome-4.7.0/css/font-awesome.min.css" />"rel="stylesheet">
 	<title>Home</title>
 </head>
 <body>
@@ -14,6 +17,9 @@
 <!-- 	<a href="_02_member/reportList.jsp">2016年會員成長報表</a><br> -->
 <!-- 	<a href="productList/selectAllProducts">管理系統</a> -->
 
-
+	<!-- jQuery library -->
+	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js" />" type="text/javascript"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="<c:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js" />" type="text/javascript"></script>
 </body>
 </html>
